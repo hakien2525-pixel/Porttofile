@@ -172,9 +172,8 @@ body {
 /* Dino Game */
 .dino-game { border-radius: 20px; font-family: var(--font-mono); }
 .dino-header, .dino-footer { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-secondary); }
-.dino-canvas { background: rgba(255, 255, 255, 0.5); border-radius: 8px; height: 80px; margin: 12px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;}
-.dino-text { font-size: 8px; text-align: center; color: var(--text-dark); margin-top: 10px;}
-.dino-sprites { font-size: 24px; position: absolute; bottom: 25px;}
+.dino-canvas-wrapper { background: rgba(255, 255, 255, 0.5); border-radius: 8px; margin: 12px 0; overflow: hidden; }
+.dino-text { font-size: 8px; font-weight: bold; color: var(--text-dark); letter-spacing: 0.5px;}
 
 /* Spotify */
 .spotify-player { border-radius: 20px; }

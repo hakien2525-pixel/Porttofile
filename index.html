@@ -113,15 +113,17 @@
             <div class="widget dino-game glass-panel">
                 <div class="dino-header">
                     <span>NO INTERNET</span>
-                    <span>HI 00182</span>
+                    <span id="dino-best-score">HI 00000</span>
                 </div>
-                <div class="dino-canvas">
-                    <div class="dino-sprites">🌵 🦖</div>
-                    <p class="dino-text">↑<br>GAME OVER — SPACE / TAP TO RESTART</p>
+                <div class="dino-canvas-wrapper" style="position: relative;">
+                    <canvas id="dino-canvas-el" width="280" height="80"></canvas>
+                    <div id="dino-overlay" class="dino-text" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; pointer-events: none; text-align: center;">
+                        <span style="background: rgba(255,255,255,0.7); padding: 4px; border-radius: 4px;">↑<br>SPACE / TAP TO RESTART</span>
+                    </div>
                 </div>
                 <div class="dino-footer">
-                    <span>00045</span>
-                    <span>BEST 00182</span>
+                    <span id="dino-score">00000</span>
+                    <span></span>
                 </div>
             </div>
 
@@ -171,5 +173,6 @@
     </main>
 
     <script src="js/main.js"></script>
+    <script src="js/dino.js"></script>
 </body>
 </html>
