@@ -12,13 +12,6 @@ class DinoGame {
         this.isGameOver = false;
         this.score = 0;
         this.bestScore = localStorage.getItem('dinoBestScore') || 0;
-        
-        // Load Sprites
-        this.dinoImg = new Image();
-        this.dinoImg.src = 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/T-Rex/3D/t-rex_3d.png';
-        
-        this.cactusImg = new Image();
-        this.cactusImg.src = 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Cactus/3D/cactus_3d.png';
 
         // Update DOM scores
         this.scoreEl = document.getElementById('dino-score');
@@ -28,23 +21,22 @@ class DinoGame {
         // Dino properties
         this.dino = {
             x: 20,
-            y: this.height - 30, // Floor is 30px tall for image
+            y: this.height - 30, // Floor is 30px tall
             width: 24,
             height: 24,
             dy: 0,
-            jumpForce: -6,
-            gravity: 0.35,
+            jumpForce: -5,
+            gravity: 0.25,
             grounded: true
         };
 
         // Obstacles
         this.obstacles = [];
-        this.obstacleSpeed = 2.5; // Slower initial speed
+        this.obstacleSpeed = 2; // Slower initial speed
         this.spawnTimer = 0;
         
         this.bindEvents();
-        // Wait for image to load to draw initial state
-        this.dinoImg.onload = () => this.drawInitialState();
+        this.drawInitialState(); // Draw immediately
     }
 
     updateScoreDisplay() {
@@ -92,7 +84,7 @@ class DinoGame {
         this.spawnTimer = 0;
         this.dino.y = this.height - 30;
         this.dino.dy = 0;
-        this.obstacleSpeed = 2.5; // Reset speed
+        this.obstacleSpeed = 2; // Reset speed
         
         // Hide overlay text
         const overlay = document.getElementById('dino-overlay');
@@ -128,15 +120,11 @@ class DinoGame {
     }
 
     spawnObstacle() {
-        const type = Math.random() > 0.5 ? 1 : 1.5; 
-        const width = 16 * type;
-        const height = 24;
-        
         this.obstacles.push({
             x: this.width,
-            y: this.height - height - 5, // ground offset
-            width: width,
-            height: height
+            y: this.height - 24 - 5, // ground offset
+            width: 16,
+            height: 24
         });
     }
 
@@ -157,18 +145,23 @@ class DinoGame {
             this.dino.grounded = true;
         }
 
-        // Draw Dino Image
-        this.ctx.drawImage(this.dinoImg, this.dino.x, this.dino.y, this.dino.width, this.dino.height);
+        // Setup font for emojis
+        this.ctx.font = '24px sans-serif';
+        this.ctx.textAlign = 'left';
+        this.ctx.textBaseline = 'top';
+
+        // Draw Dino Emoji
+        this.ctx.fillText('🦖', this.dino.x, this.dino.y);
 
         // Update and draw obstacles
         for (let i = 0; i < this.obstacles.length; i++) {
             let obs = this.obstacles[i];
             obs.x -= this.obstacleSpeed;
             
-            // Draw Cactus Image
-            this.ctx.drawImage(this.cactusImg, obs.x, obs.y, obs.width, obs.height);
+            // Draw Cactus Emoji
+            this.ctx.fillText('🌵', obs.x, obs.y);
 
-            // Collision Detection (slightly smaller hitbox)
+            // Collision Detection
             const hitboxMargin = 4;
             if (
                 this.dino.x + hitboxMargin < obs.x + obs.width - hitboxMargin &&
@@ -188,8 +181,8 @@ class DinoGame {
         this.spawnTimer--;
         if (this.spawnTimer <= 0) {
             this.spawnObstacle();
-            this.spawnTimer = 80 + Math.random() * 80; // Slower spawn rate
-            this.obstacleSpeed += 0.005; // Very slow speed increase
+            this.spawnTimer = 100 + Math.random() * 100; // Slower spawn rate
+            this.obstacleSpeed += 0.002; // Very slow speed increase
         }
 
         // Update Score
@@ -209,10 +202,13 @@ class DinoGame {
     drawInitialState() {
         this.ctx.clearRect(0, 0, this.width, this.height);
         
-        // Draw Dino Image
-        if(this.dinoImg.complete) {
-            this.ctx.drawImage(this.dinoImg, 20, this.height - 30, 24, 24);
-        }
+        // Setup font for emojis
+        this.ctx.font = '24px sans-serif';
+        this.ctx.textAlign = 'left';
+        this.ctx.textBaseline = 'top';
+        
+        // Draw Dino Emoji
+        this.ctx.fillText('🦖', 20, this.height - 30);
         
         // Draw Ground Line
         this.ctx.beginPath();
