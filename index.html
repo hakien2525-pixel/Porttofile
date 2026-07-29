@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/desktop.css">
     <link rel="stylesheet" href="css/widgets.css">
     <link rel="stylesheet" href="css/dock.css">
+    <link rel="stylesheet" href="css/notebook.css">
 </head>
 <body>
     <!-- Top Menu Bar -->
@@ -71,7 +72,7 @@
             </div>
             
             <!-- Row 2 -->
-            <div class="draggable-icon" style="top: 55%; left: 35%;">
+            <div class="draggable-icon" id="icon-notebook" style="top: 55%; left: 35%;">
                 <img src="images/notebook.png" alt="Notebook" class="icon-visual-img">
                 <span class="icon-label">Ghi Chú</span>
             </div>
@@ -143,11 +144,64 @@
                 <div class="dock-item" data-tooltip="Figma"><span class="app-icon">🎨</span></div>
                 <div class="dock-item" data-tooltip="React"><span class="app-icon">⚛️</span></div>
                 <div class="dock-item" data-tooltip="JavaScript"><span class="app-icon">JS</span></div>
-                <div class="dock-item" data-tooltip="ChatGPT"><span class="app-icon">🤖</span></div>
-                <div class="dock-item" data-tooltip="Three.js"><span class="app-icon">🧊</span></div>
-                <div class="dock-item" data-tooltip="Notion"><span class="app-icon">📓</span></div>
+                <div class="dock-item" data-tooltip="AI Integration"><span class="app-icon">🤖</span></div>
+                <div class="dock-item" data-tooltip="3D Modeling"><span class="app-icon">🧊</span></div>
+                <div class="dock-item" data-tooltip="Notes"><span class="app-icon">📓</span></div>
                 <div class="dock-separator"></div>
                 <div class="dock-item" data-tooltip="Trash"><span class="app-icon">🗑️</span></div>
+            </div>
+        </div>
+
+        <!-- Notebook Window Modal -->
+        <div class="window-modal" id="notebook-window" style="display: none;">
+            <div class="window-header" id="notebook-header">
+                <div class="window-controls">
+                    <span class="control-btn close-btn" id="close-notebook"></span>
+                    <span class="control-btn min-btn"></span>
+                    <span class="control-btn max-btn"></span>
+                </div>
+                <div class="window-title">— hakien's notebook</div>
+            </div>
+            <div class="window-body">
+                <div class="notebook-sidebar">
+                    <div class="sidebar-title">notes</div>
+                    <ul class="note-list">
+                        <li class="active" data-note="ai">artificial_intelligence.md</li>
+                        <li data-note="philosophy">philosophy.md</li>
+                        <li data-note="values">values.md</li>
+                    </ul>
+                </div>
+                <div class="notebook-content">
+                    <div id="note-ai" class="note-pane active">
+                        <p class="note-meta">Note · 29/07</p>
+                        <p class="note-title">artificial_intelligence.md</p>
+                        <p><br>— thoughts on ai<br><br></p>
+                        <p>Design is one of the few functions that ends up touching almost every other function.</p>
+                        <p>The job changes because of that.</p>
+                        <p>Visual craft is the baseline. The rest is communication, alignment, judgment, and making decisions under ambiguity.</p>
+                        <p><strong>A lot of the work is translation.</strong></p>
+                        <p>Business goals into product decisions.</p>
+                        <p>Engineering constraints into tradeoffs.</p>
+                        <p>Research into something a team can act on.</p>
+                        <p>Different opinions into a direction.</p>
+                        <p>This is why the role keeps expanding. Designers get pulled toward the parts of an organization that are unclear, unresolved, or moving.</p>
+                    </div>
+                    <div id="note-philosophy" class="note-pane">
+                        <p class="note-meta">Note · 29/07</p>
+                        <p class="note-title">philosophy.md</p>
+                        <p><br>— thoughts on design philosophy<br><br></p>
+                        <p>Simplicity is the ultimate sophistication.</p>
+                        <p>Focus on what matters most and remove the rest.</p>
+                    </div>
+                    <div id="note-values" class="note-pane">
+                        <p class="note-meta">Note · 29/07</p>
+                        <p class="note-title">values.md</p>
+                        <p><br>— core values<br><br></p>
+                        <p>1. Empathy for the user.</p>
+                        <p>2. Craftsmanship in the details.</p>
+                        <p>3. Continuous learning.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
