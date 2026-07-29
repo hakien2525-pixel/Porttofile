@@ -1,141 +1,146 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới thiệu bản thân</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Personal Portfolio - Web Developer">
+    <title>Portfolio | Web Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS Modules -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="container">
-                <h1 class="logo">Tên Của Bạn</h1>
-                <div class="nav-toggle" id="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#hero">Trang chủ</a></li>
-                    <li><a href="#about">Về tôi</a></li>
-                    <li><a href="#skills">Kỹ năng</a></li>
-                    <li><a href="#contact">Liên hệ</a></li>
-                </ul>
-            </div>
+    <!-- Background Canvas Container for future 3D/ThreeJS implementation -->
+    <div id="canvas-container" class="canvas-container"></div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">Portfolio<span class="dot">.</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section id="hero" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-image">
-                    <img src="https://via.placeholder.com/200x200?text=Ảnh+của+bạn" alt="Ảnh đại diện">
-                </div>
-                <h2>Xin chào! Tôi là [Tên Của Bạn]</h2>
-                <p>[Mô tả ngắn gọn về bản thân, ví dụ: Lập trình viên đam mê, sáng tạo và luôn học hỏi]</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn primary">Liên hệ với tôi</a>
-                    <a href="#about" class="btn secondary">Tìm hiểu thêm</a>
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero section">
+            <div class="hero-content reveal">
+                <h1 class="hero-title">Hello, I'm <br><span class="highlight">A Developer</span></h1>
+                <p class="hero-subtitle">Building digital products, brands, and experiences.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
                 </div>
             </div>
-        </divdiv class="about-content">
-                <div class="about-text">
-                    <p>[Thêm thông tin chi tiết về bản thân, kinh nghiệm, sở thích, v.v.]</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <h3>5+</h3>
-                        <p>Năm kinh nghiệm</p>
-                    </div>
-                    <div class="stat">
-                        <h3>50+</h3>
-                        <p>Dự án hoàn thành</p>
-                    </div>
-                    <div class="stat">
-                     i class="fab fa-html5"></i>
-                    <h3>HTML/CSS</h3>
-                    <p>Chuyên nghiệp</p>
-                    <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
-                </div>
-                <div class="skill">
-                    <i class="fab fa-js-square"></i>
-                    <h3>JavaScript</h3>
-                    <p>Trung cấp</p>
-                    <div class="progress-bar"><div class="progress" style="width: 75%"></div></div>
-                </div>
-                <div class="skill">
-                    <i class="fab fa-python"></i>
-                    <h3>Python</h3>
-                    <p>Cơ bản</p>
-                    <div class="progress-bar"><div class="progress" style="width: 60%"></div></div>
-                </div>
-                <div class="skill">
-                    <i class="fab fa-react"></i>
-                    <h3>React</h3>
-                    <p>Trung cấp</p>
-                    <div class="progress-bar"><div class="progress" style="width: 70%"></div></div>
-                </div
-    </section>
-
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Kỹ năng</h2>
-            <div class="skills-grid">
-                <div class="skill">
-                    <h3>HTML/CSS</h3>
-                    <p>Chuyên nghiệp</p>
-                </div>
-                <div class="skill">
-                    <h3>JavaScript</h3>
-                    <p>Trung cấp</p>
-                </div>
-                <div class="skill">
-             div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>Email: [email@example.com]</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <p>LinkedIn: [link]</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <p>GitHub: [link]</p>
-                    </div>
-                </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Tên của bạn" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Tin nhắn" required></textarea>
-                    <button type="submit" class="btn primary">Gửi</button>
-                </form>
-            </div
-                <!-- Thêm kỹ năng khác -->
+            <!-- Placeholder for 3D Computer idea -->
+            <div class="hero-3d-placeholder reveal">
+                <p class="placeholder-text">[ Future 3D Interactive Computer Here ]</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Liên hệ</h2>
-            <p>Email: [email@example.com]</p>
-            <p>LinkedIn: [link]</p>
-            <p>GitHub: [link]</p>
-        </div>
-    </section>
+        <!-- About Section -->
+        <section id="about" class="about section">
+            <div class="container reveal">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>I am a passionate developer with a strong focus on building scalable and visually stunning web applications. I love bridging the gap between engineering and design.</p>
+                        <p>When I'm not coding, I'm exploring new technologies and crafting unique digital experiences.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-card glass-panel">
+                            <h3>3+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-card glass-panel">
+                            <h3>20+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer>
+        <!-- Skills Section -->
+        <section id="skills" class="skills section">
+            <div class="container reveal">
+                <h2 class="section-title">Tech Stack</h2>
+                <div class="skills-grid">
+                    <div class="skill-item glass-panel">HTML5 / CSS3</div>
+                    <div class="skill-item glass-panel">JavaScript (ES6+)</div>
+                    <div class="skill-item glass-panel">React / Next.js</div>
+                    <div class="skill-item glass-panel">Node.js</div>
+                    <div class="skill-item glass-panel">Three.js / WebGL</div>
+                    <div class="skill-item glass-panel">UI/UX Design</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section">
+            <div class="container reveal">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card glass-panel">
+                        <div class="project-image-placeholder">Project Image</div>
+                        <div class="project-info">
+                            <h3 class="project-title">E-Commerce Platform</h3>
+                            <p class="project-desc">A full-stack e-commerce solution with dynamic cart and payment integration.</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Node.js</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Project 2 -->
+                    <article class="project-card glass-panel">
+                        <div class="project-image-placeholder">Project Image</div>
+                        <div class="project-info">
+                            <h3 class="project-title">3D Data Visualization</h3>
+                            <p class="project-desc">Interactive dashboard utilizing WebGL for rendering complex data models.</p>
+                            <div class="project-tags">
+                                <span>Three.js</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="container reveal">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-card glass-panel">
+                    <p>I'm currently available for freelance work and new opportunities.</p>
+                    <a href="mailto:hello@example.com" class="btn btn-primary mt-4">Say Hello</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 [Tên Của Bạn]. Tất cả quyền được bảo lưu.</p>
+            <p>&copy; 2026 Portfolio. Built with passion.</p>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- Main Script -->
+    <script src="js/main.js"></script>
 </body>
 </html>
