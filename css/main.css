@@ -124,9 +124,12 @@ body {
 .draggable-icon:active { cursor: grabbing; }
 .draggable-icon:hover { background: rgba(255, 255, 255, 0.1); }
 
-.icon-visual {
-    font-size: 48px; /* Emoji placeholder */
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+.icon-visual-img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    pointer-events: none; /* Let drag events pass to parent */
 }
 
 /* Right Widgets */
