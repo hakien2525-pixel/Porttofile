@@ -1,0 +1,56 @@
+/* Right Widgets */
+.widgets-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 20;
+}
+
+.widget { padding: 16px; }
+
+/* Theme Chooser */
+.theme-chooser {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+}
+.widget-title { font-size: 11px; font-weight: 600; letter-spacing: 1px; color: var(--text-secondary);}
+.theme-dots { display: flex; gap: 8px; }
+.dot { width: 16px; height: 16px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; }
+.dot.active { border-color: white; }
+.theme-blue { background: #5a8bbd; }
+.theme-purple { background: #8063a5; }
+.theme-green { background: #6b9e78; }
+.theme-dark { background: #1e1e1e; }
+
+/* Weather */
+.weather-row { display: flex; gap: 16px; }
+.weather-card { flex: 1; border-radius: 20px; }
+.weather-city { font-size: 10px; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 12px; color: var(--text-secondary); display: flex; justify-content: space-between;}
+.weather-temp { font-size: 32px; font-weight: 600; margin-bottom: 8px;}
+.weather-desc { font-size: 11px; }
+
+/* Dino Game */
+.dino-game { border-radius: 20px; font-family: var(--font-mono); }
+.dino-header, .dino-footer { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-secondary); }
+.dino-canvas-wrapper { background: rgba(255, 255, 255, 0.5); border-radius: 8px; margin: 12px 0; overflow: hidden; }
+.dino-text { font-size: 8px; font-weight: bold; color: var(--text-dark); letter-spacing: 0.5px;}
+
+/* Spotify */
+.spotify-player { border-radius: 20px; }
+.spotify-header { font-size: 10px; font-weight: 600; color: var(--text-secondary); margin-bottom: 16px;}
+.spotify-content { display: flex; gap: 16px; margin-bottom: 16px; }
+.album-art { width: 80px; height: 80px; background: linear-gradient(135deg, #4ade80, #3b82f6); border-radius: 8px;}
+.track-list { flex: 1; font-size: 11px; display: flex; flex-direction: column; gap: 6px; }
+.track span { display: inline-block; width: 15px; color: var(--text-secondary); }
+
+.spotify-controls { display: flex; justify-content: space-between; align-items: center;}
+.song-title { font-size: 12px; font-weight: 600;}
+.player-btns { display: flex; align-items: center; gap: 12px;}
+.preview-btn { background: rgba(0,0,0,0.5); color: white; border: none; padding: 4px 8px; border-radius: 12px; font-size: 10px; cursor: pointer;}
+.playback { display: flex; gap: 8px; cursor: pointer; }
