@@ -1,0 +1,260 @@
+/* Flipbook Modal */
+.flipbook-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 650px;
+    background: #F0EEE9; /* Soft paper-like background */
+    border-radius: 12px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 100;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Header */
+.flipbook-header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    background: transparent;
+    cursor: grab;
+    user-select: none;
+    z-index: 10;
+}
+
+.flipbook-header:active {
+    cursor: grabbing;
+}
+
+.flipbook-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #1a4d33; /* Dark green theme like screenshot */
+}
+
+/* Body */
+.flipbook-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Wrapper for the book */
+.flipbook-container {
+    width: 800px;
+    height: 500px;
+    position: relative;
+    perspective: 1500px; /* Essential for 3D effect */
+}
+
+/* Page base styles */
+.page {
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Soft inner shadow for the book spine */
+.page.-left {
+    box-shadow: inset -20px 0 30px -20px rgba(0,0,0,0.15), 0 0 5px rgba(0,0,0,0.1);
+    border-right: 1px solid rgba(0,0,0,0.05);
+}
+
+.page.-right {
+    box-shadow: inset 20px 0 30px -20px rgba(0,0,0,0.15), 0 0 5px rgba(0,0,0,0.1);
+    border-left: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Page content wrapper */
+.page-content {
+    padding: 40px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Cover specific */
+.page-cover {
+    background-color: #f8f6f0;
+}
+
+.cover-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1a4d33;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    margin-top: 40px;
+}
+
+.cover-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.cover-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Typography for text pages */
+.page-text {
+    color: #333;
+}
+
+.page-heading {
+    font-size: 24px;
+    color: #1a4d33;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #1a4d33;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.dropcap {
+    float: left;
+    font-size: 64px;
+    line-height: 50px;
+    padding-right: 8px;
+    padding-top: 8px;
+    color: #1a4d33;
+    font-family: "Georgia", serif;
+}
+
+.page-paragraph {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    color: #555;
+    text-align: justify;
+}
+
+/* Journal Entry */
+.date-stamp {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 12px;
+}
+
+.entry-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Photo Grid */
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Full Page Photo */
+.full-photo {
+    padding: 0;
+}
+
+.full-photo img {
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
+}
+
+.photo-caption {
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+    padding: 20px;
+    font-style: italic;
+}
+
+/* Back Cover */
+.back-cover {
+    align-items: center;
+    justify-content: center;
+}
+
+.back-cover-logo {
+    font-size: 40px;
+    color: #ccc;
+    margin-bottom: 16px;
+}
+
+.back-cover p {
+    color: #999;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* Page Numbers */
+.page-number {
+    position: absolute;
+    bottom: 20px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.page.-left .page-number {
+    left: 20px;
+}
+
+.page.-right .page-number {
+    right: 20px;
+}
+
+/* Navigation Arrows */
+.flip-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #333;
+    transition: transform 0.2s, background 0.2s;
+    z-index: 10;
+}
+
+.flip-nav:hover {
+    background: #f0f0f0;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.flip-prev { left: 16px; }
+.flip-next { right: 16px; }

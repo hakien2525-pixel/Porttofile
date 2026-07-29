@@ -1,218 +1,594 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hakien | Interactive Desktop Portfolio</title>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- CSS Modules -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/desktop.css">
-    <link rel="stylesheet" href="css/widgets.css">
-    <link rel="stylesheet" href="css/dock.css">
-    <link rel="stylesheet" href="css/notebook.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/desktop.css" />
+    <link rel="stylesheet" href="css/widgets.css" />
+    <link rel="stylesheet" href="css/dock.css" />
+    <link rel="stylesheet" href="css/notebook.css" />
+    <link rel="stylesheet" href="css/cv.css" />
+    <link rel="stylesheet" href="css/stickies.css" />
+    <link rel="stylesheet" href="css/flipbook.css">
+  </head>
+  <body>
     <!-- Top Menu Bar -->
     <header class="menu-bar">
-        <div class="menu-left">
-            <span class="menu-logo">
-                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            </span>
-            <span class="menu-item bold">Hakien</span>
-            <span class="menu-item">Edit</span>
-            <span class="menu-item">Help</span>
-            <span class="menu-item">hakien.labs</span>
+      <div class="menu-left">
+        <span class="menu-logo">
+          <svg
+            viewBox="0 0 24 24"
+            width="14"
+            height="14"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+          >
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+        </span>
+        <span class="menu-item bold">Hakien</span>
+        <span class="menu-item">Edit</span>
+        <span class="menu-item">Help</span>
+        <span class="menu-item">hakien.labs</span>
+      </div>
+      <div
+        class="menu-right"
+        style="display: flex; align-items: center; gap: 16px"
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-right: 8px;
+          "
+        >
+          <a href="#" class="menu-icon" aria-label="Instagram">
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="menu-icon" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="menu-icon" aria-label="X">
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="4" y1="4" x2="20" y2="20"></line>
+              <line x1="20" y1="4" x2="4" y2="20"></line>
+            </svg>
+          </a>
         </div>
-        <div class="menu-right">
-            <a href="#" class="menu-icon">Ig</a>
-            <a href="#" class="menu-icon">In</a>
-            <a href="#" class="menu-icon">X</a>
-            <span class="menu-time" id="clock">Jul 29 2:27 AM</span>
-        </div>
+        <span
+          class="menu-time"
+          id="clock"
+          style="font-size: 13px; font-weight: 500; letter-spacing: 0.5px"
+          >Jul 29 2:27 AM</span
+        >
+      </div>
     </header>
 
     <main class="desktop">
-        <!-- Floating Ribbons -->
-        <div class="ribbon-container">
-            <div class="ribbon">W.</div>
-            <div class="ribbon text-vertical">Nominee</div>
+      <!-- Floating Ribbons -->
+      <div class="ribbon-container">
+        <div class="ribbon">W.</div>
+        <div class="ribbon text-vertical">Nominee</div>
+      </div>
+
+      <!-- Left Information Panel -->
+      <div class="left-panel">
+        <h1 class="role-title">PRODUCT DESIGNER & DEVELOPER</h1>
+        <p class="role-desc">
+          I help people understand complex systems.<br />
+          Through product design, information architecture,<br />
+          and visual craft, I transform complexity into experiences that feel
+          intuitive.
+        </p>
+      </div>
+
+      <!-- Interactive Desktop Icons (Draggable) -->
+      <div class="desktop-icons" id="desktop-area">
+        <!-- Row 1 -->
+        <div
+          class="draggable-icon"
+          id="icon-profile"
+          style="top: 30%; left: 35%"
+        >
+          <img
+            src="images/ảnh profilee.png"
+            alt="Profile"
+            class="icon-visual-img"
+          />
+          <span class="icon-label">Cá Nhân</span>
+        </div>
+        <div class="draggable-icon" style="top: 30%; left: 50%">
+          <img src="images/laptop.png" alt="Laptop" class="icon-visual-img" />
+          <span class="icon-label">Dự Án</span>
+        </div>
+        <div class="draggable-icon" id="icon-file" style="top: 30%; left: 65%">
+          <img src="images/ảnh tệp.png" alt="File" class="icon-visual-img" />
+          <span class="icon-label">Tài Liệu</span>
         </div>
 
-        <!-- Left Information Panel -->
-        <div class="left-panel">
-            <h1 class="role-title">PRODUCT DESIGNER & DEVELOPER</h1>
-            <p class="role-desc">
-                I help people understand complex systems.<br>
-                Through product design, information architecture,<br>
-                and visual craft, I transform complexity into experiences that feel intuitive.
-            </p>
+        <!-- Row 2 -->
+        <div
+          class="draggable-icon"
+          id="icon-notebook"
+          style="top: 55%; left: 35%"
+        >
+          <img
+            src="images/notebook.png"
+            alt="Notebook"
+            class="icon-visual-img"
+          />
+          <span class="icon-label">Ghi Chú</span>
+        </div>
+        <div class="draggable-icon" id="icon-book" style="top: 55%; left: 50%">
+          <img src="images/ảnh sách.png" alt="Book" class="icon-visual-img" />
+          <span class="icon-label">Sách</span>
+        </div>
+        <div class="draggable-icon" style="top: 55%; left: 65%">
+          <img src="images/máy ảnhh.png" alt="Camera" class="icon-visual-img" />
+          <span class="icon-label">Hình Ảnh</span>
+        </div>
+      </div>
+
+      <!-- Right Widgets Panel -->
+      <aside class="widgets-panel">
+        <!-- Theme Chooser -->
+        <div class="widget theme-chooser glass-panel">
+          <span class="widget-title">CHOOSE A THEME</span>
+          <div class="theme-dots">
+            <div class="dot theme-blue active" data-theme="blue"></div>
+            <div class="dot theme-purple" data-theme="purple"></div>
+            <div class="dot theme-green" data-theme="green"></div>
+            <div class="dot theme-dark" data-theme="dark"></div>
+          </div>
         </div>
 
-        <!-- Interactive Desktop Icons (Draggable) -->
-        <div class="desktop-icons" id="desktop-area">
-            <!-- Row 1 -->
-            <div class="draggable-icon" style="top: 30%; left: 35%;">
-                <img src="images/ảnh profilee.png" alt="Profile" class="icon-visual-img">
-                <span class="icon-label">Cá Nhân</span>
+        <!-- Weather Widgets -->
+        <div class="weather-row">
+          <div class="widget weather-card glass-panel">
+            <div class="weather-city">
+              NEW YORK <span class="arrow">↗</span>
             </div>
-            <div class="draggable-icon" style="top: 30%; left: 50%;">
-                <img src="images/laptop.png" alt="Laptop" class="icon-visual-img">
-                <span class="icon-label">Dự Án</span>
-            </div>
-            <div class="draggable-icon" style="top: 30%; left: 65%;">
-                <img src="images/ảnh tệp.png" alt="File" class="icon-visual-img">
-                <span class="icon-label">Tài Liệu</span>
-            </div>
-            
-            <!-- Row 2 -->
-            <div class="draggable-icon" id="icon-notebook" style="top: 55%; left: 35%;">
-                <img src="images/notebook.png" alt="Notebook" class="icon-visual-img">
-                <span class="icon-label">Ghi Chú</span>
-            </div>
-            <div class="draggable-icon" style="top: 55%; left: 50%;">
-                <img src="images/ảnh sách.png" alt="Book" class="icon-visual-img">
-                <span class="icon-label">Sách Mới</span>
-            </div>
-            <div class="draggable-icon" style="top: 55%; left: 65%;">
-                <img src="images/máy ảnhh.png" alt="Camera" class="icon-visual-img">
-                <span class="icon-label">Hình Ảnh</span>
-            </div>
+            <div class="weather-temp">70°</div>
+            <div class="weather-desc">☁️ Overcast</div>
+          </div>
+          <div class="widget weather-card glass-panel">
+            <div class="weather-city">HANOI <span class="arrow">↗</span></div>
+            <div class="weather-temp">85°</div>
+            <div class="weather-desc">☀️ Clear</div>
+          </div>
         </div>
 
-        <!-- Right Widgets Panel -->
-        <aside class="widgets-panel">
-            <!-- Theme Chooser -->
-            <div class="widget theme-chooser glass-panel">
-                <span class="widget-title">CHOOSE A THEME</span>
-                <div class="theme-dots">
-                    <div class="dot theme-blue active" data-theme="blue"></div>
-                    <div class="dot theme-purple" data-theme="purple"></div>
-                    <div class="dot theme-green" data-theme="green"></div>
-                    <div class="dot theme-dark" data-theme="dark"></div>
-                </div>
+        <!-- Dino Game Placeholder -->
+        <div class="widget dino-game glass-panel">
+          <div class="dino-header">
+            <span>NO INTERNET</span>
+            <span id="dino-best-score">HI 00000</span>
+          </div>
+          <div class="dino-canvas-wrapper" style="position: relative">
+            <canvas id="dino-canvas-el" width="280" height="80"></canvas>
+            <div
+              id="dino-overlay"
+              class="dino-text"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                pointer-events: none;
+                text-align: center;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.7);
+                  padding: 4px;
+                  border-radius: 4px;
+                "
+                >↑<br />SPACE / TAP TO RESTART</span
+              >
+            </div>
+          </div>
+          <div class="dino-footer">
+            <span id="dino-score">00000</span>
+            <span></span>
+          </div>
+        </div>
+
+        <!-- Spotify Player -->
+        <div
+          class="widget spotify-player glass-panel"
+          style="
+            padding: 0;
+            overflow: hidden;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+          "
+        >
+          <iframe
+            style="border-radius: 12px"
+            src="https://open.spotify.com/embed/playlist/37i9dQZF1DWWQRwui0ExPn?utm_source=generator&theme=0"
+            width="100%"
+            height="152"
+            frameborder="0"
+            allowfullscreen=""
+            allow="
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              fullscreen;
+              picture-in-picture;
+            "
+            loading="lazy"
+          ></iframe>
+        </div>
+      </aside>
+
+      <!-- Bottom Tech Stack Dock -->
+      <div class="dock-wrapper">
+        <span class="dock-label">TECH STACK</span>
+        <div class="dock glass-panel">
+          <div class="dock-item" data-tooltip="Figma">
+            <span class="app-icon">🎨</span>
+          </div>
+          <div class="dock-item" data-tooltip="React">
+            <span class="app-icon">⚛️</span>
+          </div>
+          <div class="dock-item" data-tooltip="JavaScript">
+            <span class="app-icon">JS</span>
+          </div>
+          <div class="dock-item" data-tooltip="AI Integration">
+            <span class="app-icon">🤖</span>
+          </div>
+          <div class="dock-item" data-tooltip="3D Modeling">
+            <span class="app-icon">🧊</span>
+          </div>
+          <div class="dock-item" data-tooltip="Notes">
+            <span class="app-icon">📓</span>
+          </div>
+          <div class="dock-separator"></div>
+          <div class="dock-item" data-tooltip="Trash">
+            <span class="app-icon">🗑️</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notebook Window Modal -->
+      <div class="window-modal" id="notebook-window" style="display: none">
+        <div class="window-header" id="notebook-header">
+          <div class="window-controls">
+            <span class="control-btn close-btn"></span>
+            <span class="control-btn min-btn"></span>
+            <span class="control-btn max-btn"></span>
+          </div>
+          <div class="window-title">— hakien's notebook</div>
+          <div class="window-close-right" id="close-notebook">✕</div>
+        </div>
+        <div class="window-body">
+          <div class="notebook-sidebar">
+            <div class="sidebar-title">notes</div>
+            <ul class="note-list"></ul>
+          </div>
+          <div class="notebook-content"></div>
+        </div>
+      </div>
+
+      <!-- Bottom Left Retro Mac -->
+      <div class="bottom-left-info">
+        <div class="retro-mac">💻</div>
+        <div class="copyright">© 2026 HAKIEN</div>
+      </div>
+      <!-- CV Quick Look Modal -->
+      <div class="cv-modal" id="cv-window" style="display: none">
+        <div class="cv-header" id="cv-header">
+          <div class="cv-controls">
+            <span class="control-btn close-btn"></span>
+            <span class="control-btn min-btn"></span>
+            <span class="control-btn max-btn"></span>
+          </div>
+          <div class="cv-title">Photo.pdf</div>
+          <div class="window-close-right" id="close-cv">✕</div>
+        </div>
+        <div class="cv-body">
+          <div class="cv-preview-container">
+            <iframe
+              src="cv.pdf"
+              class="cv-iframe"
+              onerror="
+                this.style.display = 'none';
+                document.getElementById('cv-placeholder').style.display =
+                  'flex';
+              "
+            ></iframe>
+            <div
+              class="cv-preview-placeholder"
+              id="cv-placeholder"
+              style="display: none"
+            ></div>
+          </div>
+          <div class="cv-footer">
+            <div class="cv-filename">Photo</div>
+            <div class="cv-desc">hakien - Senior Product Designer</div>
+            <a href="cv.pdf" target="_blank" class="cv-link">open pdf ↗</a>
+            <div class="cv-meta-grid">
+              <span>Kind</span><span>PDF Document</span> <span>Size</span
+              ><span>1 MB</span> <span>Where</span><span>Desktop</span>
+              <span>Modified</span><span>Jul 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stickies App Modal -->
+      <div class="stickies-modal" id="stickies-window" style="display: none">
+        <div class="stickies-header" id="stickies-header">
+          <div class="stickies-header-left">
+            <span class="stickies-close-btn" id="close-stickies">✕</span>
+            <span class="stickies-title">STICKIES</span>
+          </div>
+          <div class="stickies-header-right">
+            <button class="btn-pill">VIEW WALL ↗</button>
+            <button class="btn-pill" id="stickies-clear">CLEAR</button>
+          </div>
+        </div>
+        <div class="stickies-body">
+          <div class="stickies-sidebar">
+            <!-- Tools -->
+            <div class="tool-group">
+              <button class="tool-btn active" data-tool="pen" aria-label="Pen">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                  <path d="M2 2l7.586 7.586"></path>
+                  <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+              </button>
+              <button class="tool-btn" data-tool="eraser" aria-label="Eraser">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M20 20H7L3 16C2 15 2 13 3 12L13 2L22 11L11 22H20"
+                  ></path>
+                  <path d="M17.5 15.5L22 11"></path>
+                </svg>
+              </button>
             </div>
 
-            <!-- Weather Widgets -->
-            <div class="weather-row">
-                <div class="widget weather-card glass-panel">
-                    <div class="weather-city">NEW YORK <span class="arrow">↗</span></div>
-                    <div class="weather-temp">70°</div>
-                    <div class="weather-desc">☁️ Overcast</div>
-                </div>
-                <div class="widget weather-card glass-panel">
-                    <div class="weather-city">HANOI <span class="arrow">↗</span></div>
-                    <div class="weather-temp">85°</div>
-                    <div class="weather-desc">☀️ Clear</div>
-                </div>
+            <!-- Brush size slider -->
+            <div class="slider-container">
+              <input
+                type="range"
+                id="brush-size"
+                min="1"
+                max="20"
+                value="3"
+                class="brush-slider"
+              />
             </div>
 
-            <!-- Dino Game Placeholder -->
-            <div class="widget dino-game glass-panel">
-                <div class="dino-header">
-                    <span>NO INTERNET</span>
-                    <span id="dino-best-score">HI 00000</span>
+            <!-- Colors -->
+            <div class="color-palette">
+              <button
+                class="color-swatch active"
+                style="background-color: #2d2a26"
+                data-color="#2D2A26"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #d34335"
+                data-color="#D34335"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #f19837"
+                data-color="#F19837"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #f8d153"
+                data-color="#F8D153"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #499d64"
+                data-color="#499D64"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #2f7267"
+                data-color="#2F7267"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #4169e1"
+                data-color="#4169E1"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #8c52ff"
+                data-color="#8C52FF"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #e45fa9"
+                data-color="#E45FA9"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #966f53"
+                data-color="#966F53"
+              ></button>
+            </div>
+          </div>
+          <div class="stickies-main">
+            <canvas id="stickies-canvas"></canvas>
+          </div>
+        </div>
+        <div class="stickies-footer">
+          <input
+            type="text"
+            class="stickies-input"
+            placeholder="Your name (optional)"
+          />
+          <input
+            type="text"
+            class="stickies-input"
+            placeholder="Say hi 👋 (optional)"
+            style="flex: 1"
+          />
+          <button class="btn-solid">Post to wall ↗</button>
+        </div>
+      </div>
+
+        <!-- Flipbook App Modal -->
+        <div class="flipbook-modal" id="flipbook-window" style="display: none;">
+            <div class="flipbook-header" id="flipbook-header">
+                <div class="flipbook-header-left">
+                    <span class="stickies-close-btn" id="close-flipbook">✕</span>
                 </div>
-                <div class="dino-canvas-wrapper" style="position: relative;">
-                    <canvas id="dino-canvas-el" width="280" height="80"></canvas>
-                    <div id="dino-overlay" class="dino-text" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; pointer-events: none; text-align: center;">
-                        <span style="background: rgba(255,255,255,0.7); padding: 4px; border-radius: 4px;">↑<br>SPACE / TAP TO RESTART</span>
+                <div class="flipbook-title">MY JOURNEY</div>
+                <div class="flipbook-header-right"></div>
+            </div>
+            <div class="flipbook-body">
+                <div class="flipbook-container" id="book-wrapper">
+                    <div id="flipbook">
+                        <!-- Cover Page -->
+                        <div class="page page-cover" data-density="soft">
+                            <div class="page-content">
+                                <h1 class="cover-title">MY<br>JOURNEY</h1>
+                                <p class="cover-subtitle">A visual diary</p>
+                                <img src="images/ảnh profilee.png" alt="Cover Image" class="cover-image">
+                            </div>
+                        </div>
+                        
+                        <!-- Page 2: Intro -->
+                        <div class="page">
+                            <div class="page-content page-text">
+                                <h2 class="page-heading">Chapter I</h2>
+                                <p class="dropcap">T</p>
+                                <p class="page-paragraph">his book is a collection of moments, thoughts, and fragments of time. It serves as a visual diary documenting the journey so far. Every page tells a small piece of a much larger story.</p>
+                                <p class="page-paragraph">Feel free to flip through these pages. You'll find photographs, scribbles, and memories scattered throughout.</p>
+                            </div>
+                            <div class="page-number">1</div>
+                        </div>
+                        
+                        <!-- Page 3: Photo Grid -->
+                        <div class="page">
+                            <div class="page-content">
+                                <div class="photo-grid">
+                                    <div class="photo-item"><img src="images/laptop.png" alt="Photo 1"></div>
+                                    <div class="photo-item"><img src="images/ảnh sách.png" alt="Photo 2"></div>
+                                </div>
+                            </div>
+                            <div class="page-number">2</div>
+                        </div>
+
+                        <!-- Page 4: Journal Entry -->
+                        <div class="page">
+                            <div class="page-content page-text">
+                                <p class="date-stamp">July 29, 2026</p>
+                                <h3 class="entry-title">Designing Experiences</h3>
+                                <p class="page-paragraph">The most fascinating aspect of design is how it shapes behavior. An interface is not just a tool; it's an environment where people spend their time.</p>
+                                <p class="page-paragraph">Today I focused on bringing analog warmth into digital spaces. The tactile feel of flipping a page, the satisfying click of a mechanical keyboard... these are the things that make software feel alive.</p>
+                            </div>
+                            <div class="page-number">3</div>
+                        </div>
+
+                        <!-- Page 5: Full Photo -->
+                        <div class="page">
+                            <div class="page-content full-photo">
+                                <img src="images/ảnh tệp.png" alt="Full Page Photo">
+                                <p class="photo-caption">Finding inspiration in the little things.</p>
+                            </div>
+                            <div class="page-number">4</div>
+                        </div>
+
+                        <!-- Back Cover -->
+                        <div class="page page-cover" data-density="soft">
+                            <div class="page-content back-cover">
+                                <div class="back-cover-logo">❖</div>
+                                <p>© 2026 Hakien</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="dino-footer">
-                    <span id="dino-score">00000</span>
-                    <span></span>
-                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="flip-nav flip-prev" id="flip-prev">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"></path></svg>
+                </button>
+                <button class="flip-nav flip-next" id="flip-next">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"></path></svg>
+                </button>
             </div>
-
-            <!-- Spotify Player -->
-            <div class="widget spotify-player glass-panel" style="padding: 0; overflow: hidden; background: transparent; border: none; box-shadow: none;">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWWQRwui0ExPn?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-        </aside>
-
-        <!-- Bottom Tech Stack Dock -->
-        <div class="dock-wrapper">
-            <span class="dock-label">TECH STACK</span>
-            <div class="dock glass-panel">
-                <div class="dock-item" data-tooltip="Figma"><span class="app-icon">🎨</span></div>
-                <div class="dock-item" data-tooltip="React"><span class="app-icon">⚛️</span></div>
-                <div class="dock-item" data-tooltip="JavaScript"><span class="app-icon">JS</span></div>
-                <div class="dock-item" data-tooltip="AI Integration"><span class="app-icon">🤖</span></div>
-                <div class="dock-item" data-tooltip="3D Modeling"><span class="app-icon">🧊</span></div>
-                <div class="dock-item" data-tooltip="Notes"><span class="app-icon">📓</span></div>
-                <div class="dock-separator"></div>
-                <div class="dock-item" data-tooltip="Trash"><span class="app-icon">🗑️</span></div>
-            </div>
-        </div>
-
-        <!-- Notebook Window Modal -->
-        <div class="window-modal" id="notebook-window" style="display: none;">
-            <div class="window-header" id="notebook-header">
-                <div class="window-controls">
-                    <span class="control-btn close-btn" id="close-notebook"></span>
-                    <span class="control-btn min-btn"></span>
-                    <span class="control-btn max-btn"></span>
-                </div>
-                <div class="window-title">— hakien's notebook</div>
-            </div>
-            <div class="window-body">
-                <div class="notebook-sidebar">
-                    <div class="sidebar-title">notes</div>
-                    <ul class="note-list">
-                        <li class="active" data-note="ai">artificial_intelligence.md</li>
-                        <li data-note="philosophy">philosophy.md</li>
-                        <li data-note="values">values.md</li>
-                    </ul>
-                </div>
-                <div class="notebook-content">
-                    <div id="note-ai" class="note-pane active">
-                        <p class="note-meta">Note · 29/07</p>
-                        <p class="note-title">artificial_intelligence.md</p>
-                        <p><br>— thoughts on ai<br><br></p>
-                        <p>Design is one of the few functions that ends up touching almost every other function.</p>
-                        <p>The job changes because of that.</p>
-                        <p>Visual craft is the baseline. The rest is communication, alignment, judgment, and making decisions under ambiguity.</p>
-                        <p><strong>A lot of the work is translation.</strong></p>
-                        <p>Business goals into product decisions.</p>
-                        <p>Engineering constraints into tradeoffs.</p>
-                        <p>Research into something a team can act on.</p>
-                        <p>Different opinions into a direction.</p>
-                        <p>This is why the role keeps expanding. Designers get pulled toward the parts of an organization that are unclear, unresolved, or moving.</p>
-                    </div>
-                    <div id="note-philosophy" class="note-pane">
-                        <p class="note-meta">Note · 29/07</p>
-                        <p class="note-title">philosophy.md</p>
-                        <p><br>— thoughts on design philosophy<br><br></p>
-                        <p>Simplicity is the ultimate sophistication.</p>
-                        <p>Focus on what matters most and remove the rest.</p>
-                    </div>
-                    <div id="note-values" class="note-pane">
-                        <p class="note-meta">Note · 29/07</p>
-                        <p class="note-title">values.md</p>
-                        <p><br>— core values<br><br></p>
-                        <p>1. Empathy for the user.</p>
-                        <p>2. Craftsmanship in the details.</p>
-                        <p>3. Continuous learning.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bottom Left Retro Mac -->
-        <div class="bottom-left-info">
-            <div class="retro-mac">💻</div>
-            <div class="copyright">© 2026 HAKIEN</div>
         </div>
     </main>
 
+    <!-- PageFlip Library -->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
     <script type="module" src="js/main.js"></script>
     <script src="js/dino.js"></script>
-</body>
+  </body>
 </html>

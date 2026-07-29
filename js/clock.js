@@ -5,8 +5,8 @@ export function initClock() {
     function updateClock() {
         const now = new Date();
         const options = { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true };
-        const timeString = now.toLocaleString('en-US', options).replace(',', '');
-        clockElement.textContent = timeString;
+        const timeString = now.toLocaleString('en-US', options).replace(',', '&nbsp;&nbsp;&nbsp;');
+        clockElement.innerHTML = timeString;
     }
     
     setInterval(updateClock, 1000);

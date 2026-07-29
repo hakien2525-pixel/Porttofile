@@ -1,0 +1,243 @@
+/* Stickies App Modal */
+.stickies-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 600px;
+    background: #F7F6F1; /* Off-white / cream background from screenshot */
+    border-radius: 16px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 100;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Header */
+.stickies-header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    cursor: grab;
+    user-select: none;
+}
+
+.stickies-header:active {
+    cursor: grabbing;
+}
+
+.stickies-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stickies-close-btn {
+    font-size: 14px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+}
+
+.stickies-close-btn:hover {
+    color: #FF5F56;
+    background: rgba(0,0,0,0.05);
+}
+
+.stickies-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+.stickies-header-right {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-pill {
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: transparent;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-pill:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+/* Body */
+.stickies-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Sidebar Tools */
+.stickies-sidebar {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0;
+    border-right: 1px solid rgba(0,0,0,0.05);
+    gap: 32px;
+    background: #F2EFE8; /* Slightly darker cream for sidebar */
+}
+
+.tool-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tool-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    transition: background 0.2s, color 0.2s;
+}
+
+.tool-btn:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+.tool-btn.active {
+    background: #2D2A26;
+    color: #fff;
+}
+
+/* Slider */
+.slider-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.brush-slider {
+    -webkit-appearance: none;
+    width: 40px;
+    height: 4px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 2px;
+    outline: none;
+}
+
+.brush-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #2D2A26;
+    cursor: pointer;
+}
+
+/* Colors */
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.color-swatch {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+    transition: transform 0.1s, border-color 0.1s;
+}
+
+.color-swatch:hover {
+    transform: scale(1.1);
+}
+
+.color-swatch.active {
+    border-color: #fff;
+    box-shadow: 0 0 0 2px #333, inset 0 0 0 1px rgba(0,0,0,0.1);
+}
+
+/* Canvas Area */
+.stickies-main {
+    flex: 1;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+#stickies-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: crosshair;
+}
+
+/* Footer */
+.stickies-footer {
+    height: 70px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 16px;
+    background: #F7F6F1;
+}
+
+.stickies-input {
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.stickies-input:focus {
+    border-color: #2D2A26;
+}
+
+.btn-solid {
+    height: 40px;
+    padding: 0 24px;
+    border-radius: 8px;
+    border: none;
+    background: #2D2A26;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-solid:hover {
+    opacity: 0.9;
+}

@@ -47,6 +47,8 @@ class DinoGame {
     bindEvents() {
         // Jump on Space or Up arrow
         document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            
             if (e.code === 'Space' || e.code === 'ArrowUp') {
                 e.preventDefault();
                 this.handleJump();
