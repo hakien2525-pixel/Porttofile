@@ -3,144 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal Portfolio - Web Developer">
-    <title>Portfolio | Web Developer</title>
+    <title>Hakien | Interactive Desktop Portfolio</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- CSS Modules -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <!-- Background Canvas Container for future 3D/ThreeJS implementation -->
-    <div id="canvas-container" class="canvas-container"></div>
-
-    <!-- Navigation -->
-    <header class="header">
-        <nav class="nav-container">
-            <div class="logo">Portfolio<span class="dot">.</span></div>
-            <ul class="nav-links">
-                <li><a href="#hero" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Top Menu Bar -->
+    <header class="menu-bar">
+        <div class="menu-left">
+            <span class="menu-logo">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </span>
+            <span class="menu-item bold">Hakien</span>
+            <span class="menu-item">Edit</span>
+            <span class="menu-item">Help</span>
+            <span class="menu-item">hakien.labs</span>
+        </div>
+        <div class="menu-right">
+            <a href="#" class="menu-icon">Ig</a>
+            <a href="#" class="menu-icon">In</a>
+            <a href="#" class="menu-icon">X</a>
+            <span class="menu-time" id="clock">Jul 29 2:27 AM</span>
+        </div>
     </header>
 
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section id="hero" class="hero section">
-            <div class="hero-content reveal">
-                <h1 class="hero-title">Hello, I'm <br><span class="highlight">A Developer</span></h1>
-                <p class="hero-subtitle">Building digital products, brands, and experiences.</p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+    <main class="desktop">
+        <!-- Floating Ribbons -->
+        <div class="ribbon-container">
+            <div class="ribbon">W.</div>
+            <div class="ribbon text-vertical">Nominee</div>
+        </div>
+
+        <!-- Left Information Panel -->
+        <div class="left-panel">
+            <h1 class="role-title">PRODUCT DESIGNER & DEVELOPER</h1>
+            <p class="role-desc">
+                I help people understand complex systems.<br>
+                Through product design, information architecture,<br>
+                and visual craft, I transform complexity into experiences that feel intuitive.
+            </p>
+        </div>
+
+        <!-- Interactive Desktop Icons (Draggable) -->
+        <div class="desktop-icons" id="desktop-area">
+            <!-- Icon 1 -->
+            <div class="draggable-icon" style="top: 25%; left: 30%;">
+                <div class="icon-visual file-note">📝</div>
+            </div>
+            <!-- Icon 2 -->
+            <div class="draggable-icon" style="top: 28%; left: 45%;">
+                <div class="icon-visual file-camera">📷</div>
+            </div>
+            <!-- Icon 3 -->
+            <div class="draggable-icon" style="top: 26%; left: 60%;">
+                <div class="icon-visual file-mixer">🎛️</div>
+            </div>
+            <!-- Icon 4 -->
+            <div class="draggable-icon" style="top: 28%; left: 70%;">
+                <div class="icon-visual file-book">📓</div>
+            </div>
+            <!-- Icon 5 -->
+            <div class="draggable-icon" style="top: 55%; left: 28%;">
+                <div class="icon-visual file-stack">📚</div>
+            </div>
+            <!-- Icon 6 -->
+            <div class="draggable-icon" style="top: 58%; left: 45%;">
+                <div class="icon-visual file-clapper">🎬</div>
+            </div>
+            <!-- Icon 7 -->
+            <div class="draggable-icon" style="top: 55%; left: 60%;">
+                <div class="icon-visual folder-blue">📁</div>
+            </div>
+            <!-- Icon 8 -->
+            <div class="draggable-icon" style="top: 58%; left: 75%;">
+                <div class="icon-visual file-portrait">🖼️</div>
+            </div>
+        </div>
+
+        <!-- Right Widgets Panel -->
+        <aside class="widgets-panel">
+            <!-- Theme Chooser -->
+            <div class="widget theme-chooser glass-panel">
+                <span class="widget-title">CHOOSE A THEME</span>
+                <div class="theme-dots">
+                    <div class="dot theme-blue active" data-theme="blue"></div>
+                    <div class="dot theme-purple" data-theme="purple"></div>
+                    <div class="dot theme-green" data-theme="green"></div>
+                    <div class="dot theme-dark" data-theme="dark"></div>
                 </div>
             </div>
-            <!-- Placeholder for 3D Computer idea -->
-            <div class="hero-3d-placeholder reveal">
-                <p class="placeholder-text">[ Future 3D Interactive Computer Here ]</p>
-            </div>
-        </section>
 
-        <!-- About Section -->
-        <section id="about" class="about section">
-            <div class="container reveal">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-grid">
-                    <div class="about-text">
-                        <p>I am a passionate developer with a strong focus on building scalable and visually stunning web applications. I love bridging the gap between engineering and design.</p>
-                        <p>When I'm not coding, I'm exploring new technologies and crafting unique digital experiences.</p>
+            <!-- Weather Widgets -->
+            <div class="weather-row">
+                <div class="widget weather-card glass-panel">
+                    <div class="weather-city">NEW YORK <span class="arrow">↗</span></div>
+                    <div class="weather-temp">70°</div>
+                    <div class="weather-desc">☁️ Overcast</div>
+                </div>
+                <div class="widget weather-card glass-panel">
+                    <div class="weather-city">HANOI <span class="arrow">↗</span></div>
+                    <div class="weather-temp">85°</div>
+                    <div class="weather-desc">☀️ Clear</div>
+                </div>
+            </div>
+
+            <!-- Dino Game Placeholder -->
+            <div class="widget dino-game glass-panel">
+                <div class="dino-header">
+                    <span>NO INTERNET</span>
+                    <span>HI 00182</span>
+                </div>
+                <div class="dino-canvas">
+                    <div class="dino-sprites">🌵 🦖</div>
+                    <p class="dino-text">↑<br>GAME OVER — SPACE / TAP TO RESTART</p>
+                </div>
+                <div class="dino-footer">
+                    <span>00045</span>
+                    <span>BEST 00182</span>
+                </div>
+            </div>
+
+            <!-- Spotify Player -->
+            <div class="widget spotify-player glass-panel">
+                <div class="spotify-header">NOW PLAYING</div>
+                <div class="spotify-content">
+                    <div class="album-art"></div>
+                    <div class="track-list">
+                        <div class="track"><span>1</span> TERRITORY - T.</div>
+                        <div class="track"><span>2</span> Glue - BICEP</div>
+                        <div class="track"><span>3</span> Moon (And It W...</div>
                     </div>
-                    <div class="about-stats">
-                        <div class="stat-card glass-panel">
-                            <h3>3+</h3>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="stat-card glass-panel">
-                            <h3>20+</h3>
-                            <p>Projects Completed</p>
+                </div>
+                <div class="spotify-controls">
+                    <span class="song-title">ASCEND • ✰ hakien ✰</span>
+                    <div class="player-btns">
+                        <button class="preview-btn">Preview</button>
+                        <div class="playback">
+                            <span>⏮</span> <span>⏯</span> <span>⏭</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </aside>
 
-        <!-- Skills Section -->
-        <section id="skills" class="skills section">
-            <div class="container reveal">
-                <h2 class="section-title">Tech Stack</h2>
-                <div class="skills-grid">
-                    <div class="skill-item glass-panel">HTML5 / CSS3</div>
-                    <div class="skill-item glass-panel">JavaScript (ES6+)</div>
-                    <div class="skill-item glass-panel">React / Next.js</div>
-                    <div class="skill-item glass-panel">Node.js</div>
-                    <div class="skill-item glass-panel">Three.js / WebGL</div>
-                    <div class="skill-item glass-panel">UI/UX Design</div>
-                </div>
+        <!-- Bottom Tech Stack Dock -->
+        <div class="dock-wrapper">
+            <span class="dock-label">TECH STACK</span>
+            <div class="dock glass-panel">
+                <div class="dock-item" data-tooltip="Figma"><span class="app-icon">🎨</span></div>
+                <div class="dock-item" data-tooltip="React"><span class="app-icon">⚛️</span></div>
+                <div class="dock-item" data-tooltip="JavaScript"><span class="app-icon">JS</span></div>
+                <div class="dock-item" data-tooltip="ChatGPT"><span class="app-icon">🤖</span></div>
+                <div class="dock-item" data-tooltip="Three.js"><span class="app-icon">🧊</span></div>
+                <div class="dock-item" data-tooltip="Notion"><span class="app-icon">📓</span></div>
+                <div class="dock-separator"></div>
+                <div class="dock-item" data-tooltip="Trash"><span class="app-icon">🗑️</span></div>
             </div>
-        </section>
+        </div>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects section">
-            <div class="container reveal">
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <article class="project-card glass-panel">
-                        <div class="project-image-placeholder">Project Image</div>
-                        <div class="project-info">
-                            <h3 class="project-title">E-Commerce Platform</h3>
-                            <p class="project-desc">A full-stack e-commerce solution with dynamic cart and payment integration.</p>
-                            <div class="project-tags">
-                                <span>React</span>
-                                <span>Node.js</span>
-                            </div>
-                        </div>
-                    </article>
-                    <!-- Project 2 -->
-                    <article class="project-card glass-panel">
-                        <div class="project-image-placeholder">Project Image</div>
-                        <div class="project-info">
-                            <h3 class="project-title">3D Data Visualization</h3>
-                            <p class="project-desc">Interactive dashboard utilizing WebGL for rendering complex data models.</p>
-                            <div class="project-tags">
-                                <span>Three.js</span>
-                                <span>JavaScript</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact section">
-            <div class="container reveal">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="contact-card glass-panel">
-                    <p>I'm currently available for freelance work and new opportunities.</p>
-                    <a href="mailto:hello@example.com" class="btn btn-primary mt-4">Say Hello</a>
-                </div>
-            </div>
-        </section>
+        <!-- Bottom Left Retro Mac -->
+        <div class="bottom-left-info">
+            <div class="retro-mac">💻</div>
+            <div class="copyright">© 2026 HAKIEN</div>
+        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Portfolio. Built with passion.</p>
-        </div>
-    </footer>
-
-    <!-- Main Script -->
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,72 +1,78 @@
 document.addEventListener('DOMContentLoaded', () => {
-    /* 
-        1. Scroll Reveal Animation 
-    */
-    const revealElements = document.querySelectorAll('.reveal');
+    // 1. Clock Update
+    const clockElement = document.getElementById('clock');
     
-    const revealOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
-    };
+    function updateClock() {
+        const now = new Date();
+        const options = { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true };
+        const timeString = now.toLocaleString('en-US', options).replace(',', '');
+        clockElement.textContent = timeString;
+    }
     
-    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, revealOptions);
-    
-    revealElements.forEach(el => {
-        revealOnScroll.observe(el);
-    });
+    setInterval(updateClock, 1000);
+    updateClock();
 
-    /* 
-        2. Sticky Header 
-    */
-    const header = document.querySelector('.header');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+    // 2. Draggable Desktop Icons
+    const draggables = document.querySelectorAll('.draggable-icon');
+    const desktopArea = document.getElementById('desktop-area');
 
-    /* 
-        3. Smooth Scrolling for Navigation Links
-    */
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
+    let activeDrag = null;
+    let offsetX = 0, offsetY = 0;
+
+    draggables.forEach(icon => {
+        icon.addEventListener('mousedown', (e) => {
+            activeDrag = icon;
+            const rect = icon.getBoundingClientRect();
+            offsetX = e.clientX - rect.left;
+            offsetY = e.clientY - rect.top;
             
-            const targetElement = document.querySelector(targetId);
-            if(targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Update active class
-                document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
-                this.classList.add('active');
-            }
+            // Bring to front
+            draggables.forEach(d => d.style.zIndex = "10");
+            icon.style.zIndex = "11";
         });
     });
 
-    /*
-        4. Setup for future 3D Canvas integration
-        - Currently empty, but ready to host Three.js or other WebGL libraries
-    */
-    const init3DEnvironment = () => {
-        console.log("3D Environment placeholder ready. Integrate Three.js here later.");
-        // Example: Setup Scene, Camera, Renderer, then append to #canvas-container
-    };
+    document.addEventListener('mousemove', (e) => {
+        if (!activeDrag) return;
+        
+        // Calculate new position
+        let newX = e.clientX - offsetX;
+        let newY = e.clientY - offsetY;
+        
+        // Constrain to screen bounds
+        const maxX = window.innerWidth - activeDrag.offsetWidth;
+        const maxY = window.innerHeight - activeDrag.offsetHeight;
+        
+        newX = Math.max(0, Math.min(newX, maxX));
+        newY = Math.max(0, Math.min(newY, maxY));
+        
+        activeDrag.style.left = `${newX}px`;
+        activeDrag.style.top = `${newY}px`;
+    });
+
+    document.addEventListener('mouseup', () => {
+        activeDrag = null;
+    });
+
+    // 3. Theme Switcher
+    const themeDots = document.querySelectorAll('.theme-dots .dot');
     
-    init3DEnvironment();
+    themeDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            // Remove active from all
+            themeDots.forEach(d => d.classList.remove('active'));
+            // Add active to clicked
+            dot.classList.add('active');
+            
+            // Apply theme
+            const theme = dot.getAttribute('data-theme');
+            const root = document.documentElement;
+            
+            // Map theme string to CSS variable
+            const bgVar = `--theme-${theme}-bg`;
+            const color = getComputedStyle(root).getPropertyValue(bgVar).trim();
+            
+            root.style.setProperty('--bg-color', color);
+        });
+    });
 });
