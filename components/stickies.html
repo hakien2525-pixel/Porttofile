@@ -1,0 +1,136 @@
+      <div class="stickies-modal" id="stickies-window" style="display: none">
+        <div class="stickies-header" id="stickies-header">
+          <div class="stickies-header-left">
+            <span class="stickies-close-btn" id="close-stickies">✕</span>
+            <span class="stickies-title">STICKIES</span>
+          </div>
+          <div class="stickies-header-right">
+            <button class="btn-pill">VIEW WALL ↗</button>
+            <button class="btn-pill" id="stickies-clear">CLEAR</button>
+          </div>
+        </div>
+        <div class="stickies-body">
+          <div class="stickies-sidebar">
+            <!-- Tools -->
+            <div class="tool-group">
+              <button class="tool-btn active" data-tool="pen" aria-label="Pen">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                  <path d="M2 2l7.586 7.586"></path>
+                  <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+              </button>
+              <button class="tool-btn" data-tool="eraser" aria-label="Eraser">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M20 20H7L3 16C2 15 2 13 3 12L13 2L22 11L11 22H20"
+                  ></path>
+                  <path d="M17.5 15.5L22 11"></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Brush size slider -->
+            <div class="slider-container">
+              <input
+                type="range"
+                id="brush-size"
+                min="1"
+                max="20"
+                value="3"
+                class="brush-slider"
+              />
+            </div>
+
+            <!-- Colors -->
+            <div class="color-palette">
+              <button
+                class="color-swatch active"
+                style="background-color: #2d2a26"
+                data-color="#2D2A26"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #d34335"
+                data-color="#D34335"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #f19837"
+                data-color="#F19837"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #f8d153"
+                data-color="#F8D153"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #499d64"
+                data-color="#499D64"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #2f7267"
+                data-color="#2F7267"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #4169e1"
+                data-color="#4169E1"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #8c52ff"
+                data-color="#8C52FF"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #e45fa9"
+                data-color="#E45FA9"
+              ></button>
+              <button
+                class="color-swatch"
+                style="background-color: #966f53"
+                data-color="#966F53"
+              ></button>
+            </div>
+          </div>
+          <div class="stickies-main">
+            <canvas id="stickies-canvas"></canvas>
+          </div>
+        </div>
+        <div class="stickies-footer">
+          <input
+            type="text"
+            class="stickies-input"
+            placeholder="Your name (optional)"
+          />
+          <input
+            type="text"
+            class="stickies-input"
+            placeholder="Say hi 👋 (optional)"
+            style="flex: 1"
+          />
+          <button class="btn-solid">Post to wall ↗</button>
+        </div>
+      </div>

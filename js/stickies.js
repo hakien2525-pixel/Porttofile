@@ -1,18 +1,38 @@
-export function initStickies() {
+export async function initStickies() {
     const fileIcon = document.getElementById('icon-file');
+    
+    if (!fileIcon) return;
+
+    let isInitialized = false;
+
+    // Toggle window visibility
+    fileIcon.addEventListener('click', async () => {
+        if (!isInitialized) {
+            try {
+                const response = await fetch('components/stickies.html');
+                const html = await response.text();
+                document.getElementById('modals-container').insertAdjacentHTML('beforeend', html);
+                setupStickiesLogic();
+                isInitialized = true;
+            } catch (err) {
+                console.error("Failed to load Stickies UI", err);
+                return;
+            }
+        }
+        const stickiesWindow = document.getElementById('stickies-window');
+        stickiesWindow.style.display = 'flex';
+        // Bring to front
+        stickiesWindow.style.zIndex = "100";
+        if (typeof resizeCanvas === 'function') resizeCanvas();
+    });
+}
+
+function setupStickiesLogic() {
     const stickiesWindow = document.getElementById('stickies-window');
     const closeBtn = document.getElementById('close-stickies');
     const header = document.getElementById('stickies-header');
-    
-    if (!fileIcon || !stickiesWindow) return;
 
-    // Window visibility
-    fileIcon.addEventListener('click', () => {
-        stickiesWindow.style.display = 'flex';
-        stickiesWindow.style.zIndex = "100";
-        resizeCanvas();
-    });
-
+    // Close window
     closeBtn.addEventListener('click', () => {
         stickiesWindow.style.display = 'none';
     });

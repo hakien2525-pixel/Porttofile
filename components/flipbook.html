@@ -1,0 +1,81 @@
+        <div class="flipbook-modal" id="flipbook-window" style="display: none;">
+            <div class="flipbook-header" id="flipbook-header">
+                <div class="flipbook-header-left">
+                    <span class="stickies-close-btn" id="close-flipbook">✕</span>
+                </div>
+                <div class="flipbook-title">MY JOURNEY</div>
+                <div class="flipbook-header-right"></div>
+            </div>
+            <div class="flipbook-body">
+                <div class="flipbook-container" id="book-wrapper">
+                    <div id="flipbook">
+                        <!-- Cover Page -->
+                        <div class="page page-cover" data-density="soft">
+                            <div class="page-content">
+                                <h1 class="cover-title" contenteditable="true" data-book-edit="cover-title">MY<br>JOURNEY</h1>
+                                <p class="cover-subtitle" contenteditable="true" data-book-edit="cover-subtitle">A visual diary</p>
+                                <img src="images/ảnh profilee.png" alt="Cover Image" class="cover-image editable-img" data-book-img="cover-img">
+                            </div>
+                        </div>
+                        
+                        <!-- Page 2: Intro -->
+                        <div class="page">
+                            <div class="page-content page-text">
+                                <h2 class="page-heading" contenteditable="true" data-book-edit="p1-h2">Chapter I</h2>
+                                <p class="dropcap" contenteditable="true" data-book-edit="p1-dropcap">T</p>
+                                <p class="page-paragraph" contenteditable="true" data-book-edit="p1-p1">his book is a collection of moments, thoughts, and fragments of time. It serves as a visual diary documenting the journey so far. Every page tells a small piece of a much larger story.</p>
+                                <p class="page-paragraph" contenteditable="true" data-book-edit="p1-p2">Feel free to flip through these pages. You'll find photographs, scribbles, and memories scattered throughout.</p>
+                            </div>
+                            <div class="page-number">1</div>
+                        </div>
+                        
+                        <!-- Page 3: Photo Grid -->
+                        <div class="page">
+                            <div class="page-content">
+                                <div class="photo-grid">
+                                    <div class="photo-item"><img src="images/laptop.png" alt="Photo 1" class="editable-img" data-book-img="p2-img1"></div>
+                                    <div class="photo-item"><img src="images/ảnh sách.png" alt="Photo 2" class="editable-img" data-book-img="p2-img2"></div>
+                                </div>
+                            </div>
+                            <div class="page-number">2</div>
+                        </div>
+
+                        <!-- Page 4: Journal Entry -->
+                        <div class="page">
+                            <div class="page-content page-text">
+                                <p class="date-stamp" contenteditable="true" data-book-edit="p3-date">July 29, 2026</p>
+                                <h3 class="entry-title" contenteditable="true" data-book-edit="p3-h3">Designing Experiences</h3>
+                                <p class="page-paragraph" contenteditable="true" data-book-edit="p3-p1">The most fascinating aspect of design is how it shapes behavior. An interface is not just a tool; it's an environment where people spend their time.</p>
+                                <p class="page-paragraph" contenteditable="true" data-book-edit="p3-p2">Today I focused on bringing analog warmth into digital spaces. The tactile feel of flipping a page, the satisfying click of a mechanical keyboard... these are the things that make software feel alive.</p>
+                            </div>
+                            <div class="page-number">3</div>
+                        </div>
+
+                        <!-- Page 5: Full Photo -->
+                        <div class="page">
+                            <div class="page-content full-photo">
+                                <img src="images/ảnh tệp.png" alt="Full Page Photo" class="editable-img" data-book-img="p4-img">
+                                <p class="photo-caption" contenteditable="true" data-book-edit="p4-caption">Finding inspiration in the little things.</p>
+                            </div>
+                            <div class="page-number">4</div>
+                        </div>
+
+                        <!-- Back Cover -->
+                        <div class="page page-cover" data-density="soft">
+                            <div class="page-content back-cover">
+                                <div class="back-cover-logo">❖</div>
+                                <p contenteditable="true" data-book-edit="back-copy">© 2026 Hakien</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="flip-nav flip-prev" id="flip-prev">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"></path></svg>
+                </button>
+                <button class="flip-nav flip-next" id="flip-next">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"></path></svg>
+                </button>
+            </div>
+        </div>

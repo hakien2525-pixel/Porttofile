@@ -1,0 +1,45 @@
+      <div class="cv-modal" id="cv-window" style="display: none">
+        <div class="cv-header" id="cv-header">
+          <div class="cv-controls">
+            <span class="control-btn close-btn"></span>
+            <span class="control-btn min-btn"></span>
+            <span class="control-btn max-btn"></span>
+          </div>
+          <div class="cv-title">Photo.pdf</div>
+          <div class="window-close-right" id="close-cv">✕</div>
+        </div>
+        <div class="cv-body">
+          <div class="cv-preview-container">
+            <iframe
+              src="cv.pdf"
+              class="cv-iframe"
+              onerror="
+                this.style.display = 'none';
+                document.getElementById('cv-placeholder').style.display =
+                  'flex';
+              "
+            ></iframe>
+            <div
+              class="cv-preview-placeholder"
+              id="cv-placeholder"
+              style="display: none"
+            ></div>
+          </div>
+          <div class="cv-footer">
+            <div class="cv-filename">Photo</div>
+            <div class="cv-desc">hakien - Senior Product Designer</div>
+            <a href="cv.pdf" target="_blank" class="cv-link" id="cv-open-link">open pdf ↗</a>
+            
+            <div class="cv-upload-section">
+                <input type="file" id="cv-upload-input" accept="application/pdf, image/*" style="display: none;">
+                <button class="btn-pill" id="cv-upload-btn" style="margin-bottom: 12px; font-size: 11px;">Upload File</button>
+            </div>
+
+            <div class="cv-meta-grid">
+              <span>Kind</span><span>PDF Document</span> <span>Size</span
+              ><span>1 MB</span> <span>Where</span><span>Desktop</span>
+              <span>Modified</span><span>Jul 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -1,12 +1,42 @@
-export function initNotebook() {
+export async function initNotebook() {
     const notebookIcon = document.getElementById('icon-notebook');
+    
+    if (!notebookIcon) return;
+
+    let isInitialized = false;
+
+    // Toggle window visibility
+    notebookIcon.addEventListener('click', async () => {
+        if (!isInitialized) {
+            try {
+                const response = await fetch('components/notebook.html');
+                const html = await response.text();
+                document.getElementById('modals-container').insertAdjacentHTML('beforeend', html);
+                setupNotebookLogic();
+                isInitialized = true;
+            } catch (err) {
+                console.error("Failed to load notebook UI", err);
+                return;
+            }
+        }
+        const notebookWindow = document.getElementById('notebook-window');
+        notebookWindow.style.display = 'flex';
+        // Bring to front
+        notebookWindow.style.zIndex = "100";
+    });
+}
+
+function setupNotebookLogic() {
     const notebookWindow = document.getElementById('notebook-window');
     const closeBtn = document.getElementById('close-notebook');
     const header = document.getElementById('notebook-header');
     const noteListEl = document.querySelector('.note-list');
     const notebookContentEl = document.querySelector('.notebook-content');
-    
-    if (!notebookIcon || !notebookWindow) return;
+
+    // Close window
+    closeBtn.addEventListener('click', () => {
+        notebookWindow.style.display = 'none';
+    });
 
     // Default Notes
     const defaultNotes = [

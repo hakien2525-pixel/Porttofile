@@ -4,8 +4,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    height: 800px;
+    width: 500px;
+    height: 600px;
+    max-height: 85vh;
     background: #F4F4F4; /* Light grey */
     border-radius: 12px;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.4);
