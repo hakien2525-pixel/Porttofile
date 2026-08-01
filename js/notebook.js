@@ -121,12 +121,6 @@ function setupNotebookLogic() {
     renderSidebar();
     renderContent();
 
-    // Open/Close
-    notebookIcon.addEventListener('click', () => {
-        notebookWindow.style.display = 'flex';
-        notebookWindow.style.zIndex = "100";
-    });
-
     closeBtn.addEventListener('click', () => {
         notebookWindow.style.display = 'none';
     });

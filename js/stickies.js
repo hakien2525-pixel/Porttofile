@@ -23,7 +23,11 @@ export async function initStickies() {
         stickiesWindow.style.display = 'flex';
         // Bring to front
         stickiesWindow.style.zIndex = "100";
-        if (typeof resizeCanvas === 'function') resizeCanvas();
+        
+        // Wait a tick for display:flex to apply and compute dimensions
+        setTimeout(() => {
+            if (window.resizeStickiesCanvas) window.resizeStickiesCanvas();
+        }, 10);
     });
 }
 
@@ -86,6 +90,9 @@ function setupStickiesLogic() {
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
     }
+    
+    window.resizeStickiesCanvas = resizeCanvas;
+    window.addEventListener('resize', resizeCanvas);
     
     // Tool selection
     const toolBtns = document.querySelectorAll('.stickies-sidebar .tool-btn');

@@ -5,6 +5,7 @@ import { initNotebook } from './notebook.js';
 import { initCV } from './cv.js';
 import { initStickies } from './stickies.js';
 import { initFlipbook } from './flipbook.js';
+import { initProjects } from './projects.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initClock();
@@ -14,4 +15,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initCV();
     initStickies();
     initFlipbook();
+    initProjects();
 });
