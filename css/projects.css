@@ -228,11 +228,31 @@
 }
 
 .project-category {
-    margin-top: 16px;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #4CAF50;
     font-weight: 600;
     outline: none;
+}
+
+.project-bottom {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-link-btn {
+    font-size: 11px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.project-link-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
 }

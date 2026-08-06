@@ -36,30 +36,33 @@ function setupProjectsLogic() {
     const defaultProjects = [
         {
             id: 'p1',
-            img: 'images/laptop.png',
+            img: 'images/ảnh dự án Alphamini.png',
             year: '2026',
-            title: 'Interactive Portfolio',
-            desc: 'A desktop-like portfolio experience simulating a real operating system natively in the browser.',
-            category: 'Web Dev',
-            filter: 'web'
+            title: 'Dự án Alphamini',
+            desc: 'Mô tả dự án Alphamini, các tính năng và vai trò của tôi trong dự án.',
+            category: 'UI/UX Design',
+            filter: 'uiux',
+            link: '#'
         },
         {
             id: 'p2',
-            img: 'images/ảnh sách.png',
+            img: 'images/ảnh dự án gia sư ảo.png',
             year: '2025',
-            title: 'Digital Flipbook',
-            desc: 'A 3D page-flipping diary and memory collection with soft page physics and live editing.',
-            category: 'UI/UX Design',
-            filter: 'uiux'
+            title: 'Dự án Gia Sư Ảo',
+            desc: 'Ứng dụng hỗ trợ học tập với trí tuệ nhân tạo, thiết kế giao diện thân thiện.',
+            category: 'Web Dev',
+            filter: 'dev',
+            link: '#'
         },
         {
             id: 'p3',
-            img: 'images/ảnh tệp.png',
+            img: 'images/ảnh dự án sắc việt.png',
             year: '2024',
-            title: 'Awwwards Nominee',
-            desc: 'Recognized for outstanding visual design, creativity, and user experience.',
+            title: 'Dự án Sắc Việt',
+            desc: 'Nền tảng tôn vinh vẻ đẹp văn hóa và con người Việt Nam.',
             category: 'Awards',
-            filter: 'awards'
+            filter: 'awards',
+            link: '#'
         }
     ];
 
@@ -84,7 +87,10 @@ function setupProjectsLogic() {
                     <div class="project-year" contenteditable="true">${p.year}</div>
                     <div class="project-title" contenteditable="true">${p.title}</div>
                     <div class="project-desc" contenteditable="true">${p.desc}</div>
-                    <div class="project-category" contenteditable="true">${p.category}</div>
+                    <div class="project-bottom">
+                        <div class="project-category" contenteditable="true">${p.category}</div>
+                        <a href="${p.link}" target="_blank" class="project-link-btn" title="Double click to edit Link">↗ Link / Tài liệu</a>
+                    </div>
                 </div>
             `;
 
@@ -114,6 +120,21 @@ function setupProjectsLogic() {
                     saveProjects();
                 }
             });
+
+            // Live edit link
+            const linkBtn = card.querySelector('.project-link-btn');
+            linkBtn.addEventListener('dblclick', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const newUrl = prompt('Nhập đường link tài liệu / website dự án:', p.link);
+                if (newUrl !== null) {
+                    p.link = newUrl.trim() || '#';
+                    linkBtn.href = p.link;
+                    saveProjects();
+                }
+            });
+            // Prevent dragging from link
+            linkBtn.addEventListener('mousedown', e => e.stopPropagation());
 
             grid.appendChild(card);
         });
