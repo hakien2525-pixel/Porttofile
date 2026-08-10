@@ -54,18 +54,24 @@
     justify-content: center;
 }
 
-.window-btn.close { 
-    background: #ff5f56; 
-    color: rgba(0,0,0,0.6);
-    font-size: 9px;
-    font-weight: 700;
-}
-.window-btn.close::before {
-    content: "✕";
-}
-
+.window-btn.close-mac { background: #ff5f56; }
 .window-btn.minimize { background: #ffbd2e; }
 .window-btn.maximize { background: #27c93f; }
+
+.header-close-icon {
+    font-size: 14px;
+    color: #888;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.header-close-icon:hover {
+    color: #fff;
+}
 
 .projects-title {
     font-size: 13px;
@@ -78,6 +84,9 @@
 
 .projects-header-right {
     flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
 }
 
 /* Body */

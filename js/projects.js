@@ -29,6 +29,7 @@ export async function initProjects() {
 function setupProjectsLogic() {
     const projectsWindow = document.getElementById('projects-window');
     const closeBtn = document.getElementById('close-projects');
+    const closeBtnMac = document.getElementById('close-projects-mac');
     const header = document.getElementById('projects-header');
     const grid = document.getElementById('projects-grid');
 
@@ -166,9 +167,11 @@ function setupProjectsLogic() {
     });
 
     // Close window
-    closeBtn.addEventListener('click', () => {
+    const closeWindow = () => {
         projectsWindow.style.display = 'none';
-    });
+    };
+    closeBtn.addEventListener('click', closeWindow);
+    if (closeBtnMac) closeBtnMac.addEventListener('click', closeWindow);
 
     // Draggable window logic
     let isDragging = false;
