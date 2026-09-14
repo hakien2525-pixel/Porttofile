@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hà Văn Kiên - Future AI Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --surface-color: rgba(30, 41, 59, 0.4);
+            --surface-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-1: #0ea5e9;
+            --accent-2: #8b5cf6;
+            --gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(14, 165, 233, 0.08), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.08), transparent 25%);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cv-container {
+            max-width: 1100px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-panel {
+            background: var(--surface-color);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--surface-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--glass-shadow);
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .profile-pic-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background: var(--gradient);
+            padding: 4px;
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-pic-container:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border: 4px solid var(--bg-color);
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--accent-1), transparent);
+        }
+
+        .contact-list, .skill-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: color 0.2s ease;
+        }
+        
+        .contact-item:hover {
+            color: var(--text-main);
+        }
+
+        .contact-icon {
+            color: var(--accent-1);
+            font-weight: 800;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background: var(--gradient);
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .header-section {
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--surface-border);
+        }
+
+        .name {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .slogan {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--accent-1);
+            border-left: 4px solid var(--accent-2);
+            padding-left: 1.2rem;
+        }
+
+        .profile-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .profile-list li {
+            position: relative;
+            padding-left: 2rem;
+            color: var(--text-muted);
+        }
+
+        .profile-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-1);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .profile-list li b {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-1), var(--accent-2), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-1);
+            box-shadow: 0 0 10px var(--accent-1);
+            transform: translateX(1px);
+        }
+        
+        .timeline-item.edu::before {
+            background: var(--accent-2);
+            box-shadow: 0 0 10px var(--accent-2);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+        }
+
+        .item-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .item-subtitle {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--accent-1);
+            margin-bottom: 0.5rem;
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: rgba(0,0,0,0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+        }
+
+        .item-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        
+        .item-desc b {
+            color: var(--text-main);
+        }
+        
+        .highlight-text {
+            color: var(--accent-1);
+            font-weight: 600;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+            .name {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <div class="profile-pic-container">
+                <div class="profile-pic">
+                    👨‍💻
+                </div>
+            </div>
+
+            <div>
+                <h3 class="section-title">Liên hệ</h3>
+                <ul class="contact-list">
+                    <li class="contact-item">
+                        <span class="contact-icon">📧</span> hvkien.it@example.com
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">📱</span> +84 123 456 789
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">📍</span> Biên Hòa, Đồng Nai
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">🔗</span> github.com/kien-adley
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="section-title">Kỹ năng cứng</h3>
+                <div class="skill-tags">
+                    <div class="skill-tag">Tư duy Logic</div>
+                    <div class="skill-tag">Cấu trúc dữ liệu</div>
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">Machine Learning</div>
+                    <div class="skill-tag">Prompt Engineering</div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="section-title">Kỹ năng mềm</h3>
+                <div class="skill-tags">
+                    <div class="skill-tag">Tinh thần chiến binh</div>
+                    <div class="skill-tag">Giải quyết vấn đề</div>
+                    <div class="skill-tag">Làm việc nhóm</div>
+                    <div class="skill-tag">Tự học siêu tốc</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content glass-panel">
+            
+            <header class="header-section">
+                <h1 class="name">Hà Văn Kiên</h1>
+                <h2 class="title">Sinh viên CNTT | Future AI Engineer</h2>
+                <p class="slogan">"Học như một cỗ máy (Machine Learning) - Thích ứng và không ngừng tối ưu hóa."</p>
+            </header>
+
+            <section>
+                <h3 class="section-title">DNA Công nghệ</h3>
+                <ul class="profile-list">
+                    <li><b>Đam mê Dữ liệu:</b> Sinh viên năm nhất chuyên ngành CNTT với khát khao trở thành một AI Engineer kiến tạo giá trị thực tiễn.</li>
+                    <li><b>Tinh thần ADLEY:</b> Thành viên nòng cốt của đội ADLEY – nơi nuôi dưỡng tinh thần "thực chiến", luôn sẵn sàng xông pha các cuộc thi công nghệ.</li>
+                    <li><b>Giải quyết vấn đề xã hội:</b> Không chỉ viết code, tôi đam mê dùng thuật toán để giải bài toán thực tế (như 17 mục tiêu phát triển bền vững của ASEAN).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 class="section-title">Học vấn</h3>
+                <div class="timeline">
+                    <div class="timeline-item edu">
+                        <div class="item-header">
+                            <div>
+                                <h4 class="item-title">Đại học Lạc Hồng (LHU)</h4>
+                                <div class="item-subtitle">Chuyên ngành: Công nghệ Thông tin</div>
+                            </div>
+                            <div class="item-date">2023 - 2027</div>
+                        </div>
+                        <p class="item-desc">Điểm trung bình (GPA): <b class="highlight-text">9.06/10</b><br>
+                        Thành tích: Lọt <b>Top 6 sinh viên xuất sắc nhất</b> Khoa CNTT năm học vừa qua.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="section-title">Dự án & Giải thưởng thực chiến</h3>
+                <div class="timeline">
+                    
+                    <div class="timeline-item">
+                        <div class="item-header">
+                            <div>
+                                <h4 class="item-title">Trợ lý ảo thông minh (Smart Virtual Assistant)</h4>
+                                <div class="item-subtitle">Đội ADLEY - Hackathon Khoa CNTT</div>
+                            </div>
+                            <div class="item-date">Giải Nhì</div>
+                        </div>
+                        <p class="item-desc">Cùng đội ADLEY phát triển một AI Agent có khả năng tương tác và hỗ trợ người dùng. Bước đầu hiện thực hóa đam mê Trí tuệ nhân tạo thông qua một sản phẩm thực tế, hoàn thiện trong thời gian ngắn của Hackathon.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="item-header">
+                            <div>
+                                <h4 class="item-title">IC Project – Giải quyết 17 vấn đề ASEAN</h4>
+                                <div class="item-subtitle">Đội ADLEY - Cuộc thi cấp Khoa CNTT</div>
+                            </div>
+                            <div class="item-date">Giải Nhì</div>
+                        </div>
+                        <p class="item-desc">Áp dụng tư duy hệ thống và công nghệ để đề xuất các giải pháp khả thi cho 17 vấn đề phát triển bền vững của khu vực ASEAN. Thể hiện tầm nhìn vượt ra khỏi những dòng code thông thường.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="item-header">
+                            <div>
+                                <h4 class="item-title">Chứng chỉ chuyên môn Quốc tế</h4>
+                                <div class="item-subtitle">Arizona State University (ASU)</div>
+                            </div>
+                        </div>
+                        <p class="item-desc">Sở hữu <b class="highlight-text">03 chứng chỉ chuyên môn</b> từ ASU. Đây là minh chứng rõ nét cho khả năng đọc hiểu tài liệu quốc tế, tự học và chủ động mở rộng kiến thức ngoài giảng đường.</p>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

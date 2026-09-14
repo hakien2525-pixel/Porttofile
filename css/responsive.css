@@ -1,0 +1,182 @@
+/* =========================================================
+   RESPONSIVE DESIGN CHO PORTFOLIO DẠNG HỆ ĐIỀU HÀNH
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   TABLET BROWSER (Màn hình cỡ trung bình: Dưới 1024px)
+   --------------------------------------------------------- */
+@media screen and (max-width: 1024px) {
+    /* Thu nhỏ tối đa các cửa sổ tránh bị tràn khỏi màn hình */
+    .projects-window,
+    .cv-window,
+    .notebook-window,
+    .stickies-window,
+    .flipbook-window {
+        width: 90% !important;
+        height: 85% !important;
+        max-width: 90vw !important;
+        max-height: 85vh !important;
+    }
+    
+    .projects-body {
+        padding: 30px;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+    }
+}
+
+/* ---------------------------------------------------------
+   MOBILE BROWSER (Màn hình nhỏ: Dưới 768px)
+   --------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+    
+    /* TẮT TÍNH NĂNG KÉO THẢ TRÊN MOBILE ĐỂ TRÁNH LỖI CHẠM */
+    .draggable-icon {
+        cursor: pointer;
+    }
+    .projects-header, .cv-header, .notebook-header, .stickies-header {
+        cursor: default !important;
+    }
+
+    /* 1. THANH MENU (Top Menu Bar) */
+    .menu-item:not(.bold):not(.mobile-widgets-btn) {
+        display: none !important; /* Ẩn bớt các mục không quan trọng */
+    }
+    .mobile-widgets-btn {
+        display: block !important;
+        font-weight: 600;
+        color: #ffbd2e;
+    }
+    .menu-right .menu-icon {
+        display: none !important; /* Ẩn icon mạng xã hội để tiết kiệm không gian */
+    }
+    .menu-time {
+        font-size: 11px !important;
+    }
+
+    /* 2. KHU VỰC GIỚI THIỆU (Left Panel) */
+    .left-panel {
+        top: 60px;
+        left: 20px;
+        right: 20px;
+        width: auto;
+        text-align: center;
+        z-index: 10;
+    }
+    .role-title {
+        font-size: 22px;
+        line-height: 1.3;
+        margin-bottom: 10px;
+    }
+    .role-desc {
+        font-size: 13px;
+        max-width: 100%;
+    }
+    .role-desc br {
+        display: none; /* Bỏ xuống dòng cứng */
+    }
+
+    /* 3. ICON DESKTOP */
+    .desktop-icons {
+        position: absolute;
+        top: 220px;
+        left: 0;
+        right: 0;
+        bottom: 100px; /* Nhường chỗ cho Dock */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        padding: 10px 20px;
+        align-content: start;
+        justify-items: center;
+    }
+    
+    .draggable-icon {
+        /* Hủy bỏ tọa độ tuyệt đối (absolute) để sắp xếp theo Grid */
+        position: static !important;
+        transform: none !important;
+        margin: 0 !important;
+    }
+
+    /* 4. THANH DOCK (Dưới cùng) */
+    .dock-container {
+        width: 90%;
+        bottom: 15px;
+        padding: 10px 15px;
+        overflow-x: auto; /* Cho phép vuốt ngang nếu quá dài */
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* ẨN WIDGETS TRÊN MOBILE VÀ HIỂN THỊ DẠNG OVERLAY KHI CẦN */
+    .widgets-panel {
+        display: none !important;
+    }
+    
+    .widgets-panel.show {
+        display: flex !important;
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        background: rgba(20, 20, 20, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 20px;
+        z-index: 999;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        width: 300px;
+        max-width: 90vw;
+    }
+    
+    .dock-item {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+    
+    .dock-item-icon {
+        font-size: 20px;
+    }
+    
+    /* 5. CÁC CỬA SỔ (MODALS / WINDOWS) */
+    /* Phóng to toàn màn hình trên điện thoại */
+    .projects-window,
+    .cv-window,
+    .notebook-window,
+    .stickies-window,
+    .flipbook-window {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100vw !important;
+        max-height: 100vh !important;
+        border-radius: 0;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        border: none;
+    }
+
+    /* Tinh chỉnh riêng cho các thành phần trong cửa sổ */
+    .projects-body {
+        padding: 20px;
+    }
+    
+    .hero-title {
+        font-size: 26px;
+    }
+    
+    .projects-filters {
+        flex-wrap: wrap; /* Cho phép rớt dòng */
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr; /* 1 cột duy nhất trên mobile */
+    }
+    
+    /* Sách lật 3D */
+    .flipbook-container {
+        transform: scale(0.5) !important; /* Thu nhỏ sách để vừa màn hình */
+    }
+}

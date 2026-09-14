@@ -16,4 +16,26 @@ document.addEventListener('DOMContentLoaded', () => {
     initStickies();
     initFlipbook();
     initProjects();
+
+    // Reset widgets state when clicking desktop
+    document.addEventListener('click', () => {
+        const widgetsPanel = document.querySelector('.widgets-panel');
+        if (widgetsPanel && widgetsPanel.classList.contains('show')) {
+            widgetsPanel.classList.remove('show');
+        }
+    });
+
+    // Mobile Widgets Toggle
+    const toggleWidgetsBtn = document.getElementById('toggle-widgets-btn');
+    const widgetsPanel = document.querySelector('.widgets-panel');
+    if (toggleWidgetsBtn && widgetsPanel) {
+        toggleWidgetsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            widgetsPanel.classList.toggle('show');
+        });
+        
+        widgetsPanel.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    }
 });
